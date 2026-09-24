@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cj504n5tnse7j"]
+
+[ext_resource type="Script" uid="uid://c2q848ue5vsk0" path="res://_scripts/bullet.gd" id="1_lmvnl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
+size = Vector2(10, 10)
+
+[node name="bullet" type="Area2D" unique_id=1367288080]
+scale = Vector2(0.24000004, 0.24000043)
+script = ExtResource("1_lmvnl")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=170316820]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=398729974]
+shape = SubResource("RectangleShape2D_3owqy")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=437571724]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

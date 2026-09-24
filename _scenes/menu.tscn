@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://jb2wosb6tuee"]
+
+[ext_resource type="Script" uid="uid://cl25c5o3fax0y" path="res://_scripts/menu.gd" id="1_r7r5g"]
+
+[node name="menu" type="Control" unique_id=362081688]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r7r5g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=896693704]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -9.0
+offset_right = 1174.0
+offset_bottom = 657.0
+color = Color(2.4065375e-08, 0.23525336, 0.23688698, 1)
+
+[node name="Label" type="Label" parent="." unique_id=652472261]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 63.0
+offset_right = 835.0
+offset_bottom = 255.0
+theme_override_font_sizes/font_size = 64
+text = "ASTEROID"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="START" type="Button" parent="." unique_id=795426366]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 367.0
+offset_right = 651.0
+offset_bottom = 433.0
+theme_override_font_sizes/font_size = 32
+text = "START"
+
+[node name="highscore" type="Label" parent="." unique_id=2012680571]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 229.0
+offset_right = 779.0
+offset_bottom = 327.0
+theme_override_font_sizes/font_size = 32
+
+[connection signal="pressed" from="START" to="." method="_on_start_pressed"]

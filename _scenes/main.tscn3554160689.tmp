@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b06q687jwo37w"]
+
+[ext_resource type="PackedScene" uid="uid://c0w8n5n4pgtd8" path="res://_scenes/player.tscn" id="1_dmym1"]
+[ext_resource type="Texture2D" uid="uid://lca1vif0n823" path="res://space_background_pack/Assets/Old Version/layers/parallax-space-backgound.png" id="1_x6rnu"]
+
+[node name="main" type="Node" unique_id=770610523]
+
+[node name="background" type="CanvasLayer" parent="." unique_id=972666633]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="background" unique_id=1257225839]
+offset_right = 1161.1
+offset_bottom = 683.0
+texture = ExtResource("1_x6rnu")
+
+[node name="player" parent="." unique_id=903625458 instance=ExtResource("1_dmym1")]
+position = Vector2(547, 310)

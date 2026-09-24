@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b06q687jwo37w"]
+
+[ext_resource type="PackedScene" uid="uid://c0w8n5n4pgtd8" path="res://_scenes/player.tscn" id="1_dmym1"]
+[ext_resource type="Script" uid="uid://b7e72mcaqn0t1" path="res://_scripts/main.gd" id="1_lavtb"]
+[ext_resource type="Texture2D" uid="uid://lca1vif0n823" path="res://space_background_pack/Assets/Old Version/layers/parallax-space-backgound.png" id="1_x6rnu"]
+[ext_resource type="Script" uid="uid://jnc70nbsdymd" path="res://_scripts/asteroid_spawner.gd" id="3_3q5j6"]
+[ext_resource type="Texture2D" uid="uid://wfom1ta3xfko" path="res://Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="3_6bnj4"]
+
+[node name="main" type="Node" unique_id=770610523]
+script = ExtResource("1_lavtb")
+
+[node name="background" type="CanvasLayer" parent="." unique_id=972666633]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="background" unique_id=1257225839]
+offset_right = 1158.0
+offset_bottom = 651.0
+texture = ExtResource("1_x6rnu")
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1934073462]
+
+[node name="Label" type="Label" parent="ui" unique_id=1146865361]
+offset_left = 417.0
+offset_top = 34.0
+offset_right = 690.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="health" type="Sprite2D" parent="ui" unique_id=888901179]
+position = Vector2(32.5, 22)
+scale = Vector2(0.68749994, 0.625)
+texture = ExtResource("3_6bnj4")
+
+[node name="health2" type="Sprite2D" parent="ui" unique_id=1144589001]
+position = Vector2(71, 22)
+scale = Vector2(0.68749994, 0.625)
+texture = ExtResource("3_6bnj4")
+
+[node name="health3" type="Sprite2D" parent="ui" unique_id=1273379994]
+position = Vector2(111, 21)
+scale = Vector2(0.68749994, 0.625)
+texture = ExtResource("3_6bnj4")
+
+[node name="player" parent="." unique_id=903625458 instance=ExtResource("1_dmym1")]
+position = Vector2(547, 310)
+
+[node name="asteroid spawner" type="Marker2D" parent="." unique_id=110008368]
+script = ExtResource("3_3q5j6")
+
+[node name="Timer" type="Timer" parent="asteroid spawner" unique_id=1492969667]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="asteroid spawner/Timer" to="asteroid spawner" method="_on_timer_timeout"]

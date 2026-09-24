@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c6lb6hdc6g6uc"]
+
+[ext_resource type="Script" uid="uid://llxj0ti3ctn" path="res://_scripts/dead.gd" id="1_w2tvt"]
+
+[node name="dead" type="Control" unique_id=548767938]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w2tvt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=915177234]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -4.0
+offset_right = 1183.0
+offset_bottom = 656.0
+color = Color(0.7492941, 0.16149545, 0.27239567, 1)
+
+[node name="reset" type="Button" parent="." unique_id=925208853]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 360.0
+offset_right = 733.0
+offset_bottom = 475.0
+theme_override_font_sizes/font_size = 64
+text = "RESTART"
+
+[node name="Label" type="Label" parent="." unique_id=1131337168]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 54.0
+offset_right = 938.0
+offset_bottom = 407.0
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER
+"
+
+[node name="score" type="Label" parent="." unique_id=1375444233]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 259.0
+offset_right = 657.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 32
+
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]

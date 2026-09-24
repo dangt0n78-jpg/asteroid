@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c0w8n5n4pgtd8"]
+
+[ext_resource type="Script" uid="uid://c1t4x6drcoeli" path="res://_scripts/player.gd" id="1_whni8"]
+[ext_resource type="Texture2D" uid="uid://wfom1ta3xfko" path="res://Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="1_yk7bn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8upip"]
+radius = 10.198039
+
+[node name="player" type="CharacterBody2D" unique_id=903625458]
+position = Vector2(16, 30)
+rotation = -1.5707964
+script = ExtResource("1_whni8")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1434186150]
+rotation = 1.5707964
+texture = ExtResource("1_yk7bn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1974968929]
+shape = SubResource("CircleShape2D_8upip")
+
+[node name="gun" type="Marker2D" parent="." unique_id=1648890947]
+position = Vector2(10, 4.3711384e-07)
